@@ -4,6 +4,7 @@
   "encryptOAuthKeys": false,
   "oauthSecretKey": "",
   "public": {
-    "appTitle": "Chat Signup Request"
+    "appTitle": "Chat Signup Request",
+    "logo": "/code4hr.png"
   }
 }

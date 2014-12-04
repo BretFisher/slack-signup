@@ -1,9 +1,29 @@
 <template name="main">
   <div class="container">
     <div class="row">
-      <h1>{{appTitle}}</h1>
+
+      <!-- Image and Title -->
+      <h1>
+        {{#if logo}}
+          <img height="64px" width="64px" src="{{logo}}">
+        {{/if}}
+        {{appTitle}}
+      </h1>
     </div>
 
+    <!-- Error Alert Box -->
+    {{#if error}}
+    <div class="row">
+      <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close close-error">
+          <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+        </button>
+        <strong>Warning!</strong> {{error}}
+      </div>
+    </div>
+    {{/if}}
+
+    <!-- Step 1 -->
     <div class="row {{#if currentUser}}text-muted{{else}}bg-info{{/if}}">
       <h3>
         Step 1: Login with any of these accounts to prove you're human.*
@@ -11,22 +31,25 @@
       </h3>
     </div>
 
-    <div class="row {{#if currentUser}}bg-info{{else}}text-muted{{/if}}">
+    <!-- Step 2 -->
+    <div class="row {{#if formReady}}bg-info{{else}}text-muted{{/if}}">
       <h3>
         Step 2: Provide your email and name.
       </h3>
 
-      {{#if currentUser}}
+      {{#if formReady}}
         {{> form}}
       {{/if}}
     </div>
 
-    <div class="row {{#if formSubmitted}}bg-info{{else}}text-muted{{/if}}">
+    <!-- Step 3 -->
+    <div class="row {{#if formSubmit}}bg-info{{else}}text-muted{{/if}}">
       <h3>
         Step 3: Wait for an email invite that will get you started with Slack Chat.**
       </h3>
     </div>
 
+    <!-- Footer -->
     <div class="row">
       {{> footer}}
     </div>

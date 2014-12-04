@@ -9,7 +9,7 @@ Meteor.methods({
 
     // the message we post into Slack
     var message = name + " " + email + " would like Slack access. Admins, please invite them via " +
-                  Meteor.settings.slackUrl + "/admin/invites";
+                  Meteor.settings.slackUrl + "/admin/invites/full";
 
     // the https webhook endpoint given to you by slack
     // it's a secret so keep in settings, which is not stored in git
@@ -26,7 +26,7 @@ Meteor.methods({
 
     // make actual webhook call
     try {
-      HTTP.post(slackUrl,
+      HTTP.post(slackWebhook,
         {data: {
           "text": message,
           "username": username,
@@ -35,9 +35,8 @@ Meteor.methods({
         }
       });
     } catch (e) {
-      //TODO this should eventually callback to client about a problem
-      console.log("slack posting error: " + e);
+      // sends an error back to client via callback
+      throw new Meteor.Error("reaching-slack", e.toString());
     }
-
   }
 });

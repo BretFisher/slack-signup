@@ -16,6 +16,8 @@ Use `meteor add accounts-*` and `meteor remove accounts-*` to control which sign
 
 Note that when adding 3rd party OAuth options, you need to configure each one. Easiest way is to configure via web gui, which will store the OAuth config/secrets in MongoDB under `db.meteor_accounts_loginServiceConfiguration`. Optionally, you can configure in-app using the Meteor package `service-configuration`, more info http://docs.meteor.com/#/full/meteor_loginwithexternalservice.
 
+If storing OAuth keys, you might want to encrypt them. There are settings to enable this, and info of how to setup is at `server/server.js`. Disabled by default.
+
 To signin without bothering to configure any of the OAuth's for 3rd party services you can always use username/password by adding `meteor add accounts-password`.
 
 ## Running in Local Dev
@@ -30,3 +32,5 @@ To signin without bothering to configure any of the OAuth's for 3rd party servic
 2. Get OAuth keys for services you want and add them to `settings.json`.
 3. Deploy to free meteor hosting `meteor deploy appname --settings settings.json`.
 4. Configure 3rd party OAuth services via the webpage.
+
+Open Sourced using MIT License (LICENSE.txt)

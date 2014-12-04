@@ -3,8 +3,8 @@
 ### Meteor ###
 .meteor/local
 .meteor/meteorite
-settings.json
-config.json
+settings*.json
+config*.json
 
 ### OSX ###
 .DS_Store

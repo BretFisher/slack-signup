@@ -30,7 +30,8 @@ To signin without bothering to configure any of the OAuth's for 3rd party servic
 
 1. Add/remove the accounts packages you want to use (find in `.meteor/packages`).
 2. Get OAuth keys for services you want and add them to `settings.json`.
-3. Deploy to free meteor hosting `meteor deploy appname --settings settings.json`.
-4. Configure 3rd party OAuth services via the webpage.
+3. Change out your `public/favicon.ico` if you want.
+4. Deploy to free meteor hosting `meteor deploy appname --settings settings.json`.
+5. Configure 3rd party OAuth services via the webpage.
 
 Open Sourced using MIT License (LICENSE.txt)

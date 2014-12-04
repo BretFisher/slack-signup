@@ -1,0 +1,34 @@
+<template name="main">
+  <div class="container">
+    <div class="row">
+      <h1>{{appTitle}}</h1>
+    </div>
+
+    <div class="row {{#if currentUser}}text-muted{{else}}bg-info{{/if}}">
+      <h3>
+        Step 1: Login with any of these accounts to prove you're human.*
+        {{> loginButtons}}
+      </h3>
+    </div>
+
+    <div class="row {{#if currentUser}}bg-info{{else}}text-muted{{/if}}">
+      <h3>
+        Step 2: Provide your email and name.
+      </h3>
+
+      {{#if currentUser}}
+        {{> form}}
+      {{/if}}
+    </div>
+
+    <div class="row {{#if formSubmitted}}bg-info{{else}}text-muted{{/if}}">
+      <h3>
+        Step 3: Wait for an email invite that will get you started with Slack Chat.**
+      </h3>
+    </div>
+
+    <div class="row">
+      {{> footer}}
+    </div>
+  </div>
+</template>

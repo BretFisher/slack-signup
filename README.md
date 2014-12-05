@@ -12,7 +12,7 @@ Inspired by https://www.npmjs.org/package/hubot-slack-invite-request
 
 Follow the Meteor Tutorial to install meteor: https://www.meteor.com/install
 
-This simple app uses Meteor's built-in account system to log someone in (to validate they are human) and let the submit a form requesting Slack team access.
+This simple app uses Meteor's built-in account system to log someone in and let the submit a form requesting Slack team access. Note: The demo doesn't actually post anywhere.
 
 ### Features
 

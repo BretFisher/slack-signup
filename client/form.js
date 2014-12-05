@@ -30,7 +30,6 @@ Template.form.events({
 
     // call our server method by the same name, which will post to Slack
     Meteor.call('sendRequestToSlack', name, email, function (error) {
-      //TODO tell them it's submitted
       if (error && error.error) {
         // oh we got back an error, lets store it for later alert popup
         Session.set('error', error.reason);

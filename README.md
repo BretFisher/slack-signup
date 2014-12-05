@@ -1,6 +1,10 @@
 # Slack Signup Request Form
 
-Until Slack provides a way for users to request team entry, there needs to be a way to tell slack admins that someone is ringing the doorbell. This will allow someone to fill out a form which posts their signup request to a Slack channel.
+Problem: Slack only allows teams to invite people via manually sent emails (assuming you don't all have the same email domain). If your team is large and disparate, there's no easy way to point everyone to a URL and have them signup. Until Slack provides a way for users to request team entry, there needs to be a way to tell slack admins that someone is ringing the doorbell.
+
+This web app will allow someone to fill out a form which posts their signup request to a Slack channel.
+
+demo -> http://slacksignup.meteor.com/ (errors on posting to empty Slack team, but still works more or less)
 
 Inspired by https://www.npmjs.org/package/hubot-slack-invite-request
 
@@ -9,6 +13,15 @@ Inspired by https://www.npmjs.org/package/hubot-slack-invite-request
 Follow the Meteor Tutorial to install meteor: https://www.meteor.com/install
 
 This simple app uses Meteor's built-in account system to log someone in (to validate they are human) and let the submit a form requesting Slack team access.
+
+### Features
+
+* Makes Webhook calls from server
+* Makes DOM style updates the Meteor way rather then jQuery
+* Use of fantastic `accounts` packages for OAuth
+* Form submit to server method
+* Encrypts OAuth keys, and auto-deletes accounts after 1 day
+* Only 70 lines of js and 81 html
 
 All needed settings should be set in a `settings.json` file (or similar). `example-settings.json` is included. For security, `.gitignore` will ignore files named `settings.json` and `config.json` so you don't put your secrets in github public.
 

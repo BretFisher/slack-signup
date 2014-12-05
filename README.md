@@ -18,6 +18,8 @@ Note that when adding 3rd party OAuth options, you need to configure each one. E
 
 If storing OAuth keys, you might want to encrypt them. There are settings to enable this, and info of how to setup is at `server/server.js`. Disabled by default.
 
+Extra layer of security, since this is something people only do once, is to have MongoDB TTL delete user accounts from the database after 1 day. You'll need to give a command to Mongo directly, more info in `server/server.js`.
+
 To signin without bothering to configure any of the OAuth's for 3rd party services you can always use username/password by adding `meteor add accounts-password`.
 
 ## Running in Local Dev

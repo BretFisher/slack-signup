@@ -9,7 +9,7 @@ Meteor.methods({
 
     // the message we post into Slack
     var message = name + " " + email + " would like Slack access. Admins, please invite them via " +
-                  Meteor.settings.slackUrl + "/admin/invites/full";
+                  Meteor.settings.public.slackUrl + "/admin/invites/full";
 
     // the https webhook endpoint given to you by slack
     // it's a secret so keep in settings, which is not stored in git
@@ -22,7 +22,7 @@ Meteor.methods({
     var icon = ":slack:";
 
     // Slack channel to post to
-    var channel = "#general";
+    var channel = "organizers";
 
     // make actual webhook call
     try {

@@ -9,6 +9,10 @@ Template.main.helpers({
   appTitle: function () {
     return Meteor.settings.public.appTitle;
   },
+  // return the http url of the slack channel
+  slackUrl: function () {
+    return Meteor.settings.public.slackUrl;
+  },
   formReady: function () {
     return (Meteor.userId() && !Session.get('formSubmit')) ? true : false;
   },

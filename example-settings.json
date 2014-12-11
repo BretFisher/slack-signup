@@ -1,10 +1,10 @@
 {
   "slackWebhook": "https://hooks.slack.com/services/<key>",
-  "slackUrl": "https://<name>.slack.com",
   "encryptOAuthKeys": false,
   "oauthSecretKey": "",
   "public": {
     "appTitle": "Chat Signup Request",
+    "slackUrl": "https://<name>.slack.com",
     "logo": "/code4hr.png"
   }
 }

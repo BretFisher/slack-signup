@@ -35,6 +35,8 @@ Extra layer of security, since this is something people only do once, is to have
 
 To signin without bothering to configure any of the OAuth's for 3rd party services you can always use username/password by adding `meteor add accounts-password`.
 
+By default, slack-signup will send a request to a channel called 'organizers', overriding whatever you've configured in the Slack webhook. If it doesn't exist in your Slack account, you'll get an error like 'Warning! Error: failed [500] Invalid channel specified'. If you'd like to change the channel override, you'll need to open up 'server/methods.js' and change it there.
+
 ## Running in Local Dev
 
 1. Create your `settings.json` from `example-settings.json`.

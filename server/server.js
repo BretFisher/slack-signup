@@ -15,3 +15,12 @@ Accounts.config({loginExpirationInDays: 1});
 if (Meteor.settings.encryptOAuthKeys) {
   Accounts.config({oauthSecretKey: Meteor.settings.oauthSecretKey});
 }
+
+// lets complain to server command line if you forgot --settings when running Meteor
+Meteor.startup(function () {
+  if (Meteor.isServer) {  
+    if (Object.keys(Meteor.settings).length === 0) {
+      console.log("You forgot to run Meteor with --settings!");
+    }
+  }
+});
